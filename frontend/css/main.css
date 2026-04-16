@@ -174,8 +174,6 @@ body{
 
 .main-aboutUs{
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr; */
     grid-template-columns: auto auto;
     justify-content: space-around;
     width: 80%;
@@ -252,3 +250,113 @@ body{
 }
 
 .main-aboutUs__text button{margin-top: 20px;}
+
+.main-ourService{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 73%;
+    margin: 100px auto 0 300px;
+    /* row-gap: 10px; */
+}
+
+.main-ourService__header{grid-area: 1 / 1 / 2 / 2;}
+.main-ourService__text{grid-area: 1 / 2 / 2 / 4;}
+.main-ourService__fblock{grid-area: 2 / 1 / 3 / 2;}
+.main-ourService__sblock{grid-area: 2 / 2 / 3 / 3;}
+.main-ourService__tblock{grid-area: 2 / 3 / 3 / 4;}
+.main-ourService__foblock{grid-area: 3 / 1 / 4 / 2;}
+.main-ourService__fiblock{grid-area: 3 / 2 / 4 / 3;}
+.main-ourService__sixblock{grid-area: 3 / 3 / 4 / 4;}
+
+.main-ourService__header h4{
+    font-family: 'Chakra Petch', sans-serif;
+    background: linear-gradient(to right, rgba(12, 186, 241, 1) 0%, rgba(233, 92, 233, 1) 10%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.main-ourService__header h2{
+    font-family: 'Chakra Petch', sans-serif;
+    color: white;
+    font-size: 3rem;
+    margin-top: 0px;
+}
+
+.main-ourService__text span,
+.main-ourService__fblock span,
+.main-ourService__sblock span,
+.main-ourService__tblock span,
+.main-ourService__foblock span,
+.main-ourService__fiblock span,
+.main-ourService__sixblock span{
+    font-family: 'Chakra Petch', sans-serif;
+    color: #818181;
+}
+
+.main-ourService__text h3,
+.main-ourService__fblock h3,
+.main-ourService__sblock h3,
+.main-ourService__tblock h3,
+.main-ourService__foblock h3,
+.main-ourService__fiblock h3,
+.main-ourService__sixblock h3{
+    color: rgba(255, 255, 255, 1);
+    font-weight: normal;
+}
+
+.main-ourService__text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-ourService__fblock,
+.main-ourService__sblock,
+.main-ourService__tblock,
+.main-ourService__foblock,
+.main-ourService__fiblock,
+.main-ourService__sixblock{
+    background-color: rgba(37, 37, 50);
+    width: 80%;
+    border: 1px solid #4e4e59;
+    height: auto;
+    padding: 30px;
+}
+
+.main-ourService__fblock {
+    transform: translateY(0px);
+}
+
+.main-ourService__sblock {
+    transform: translateY(40px);
+}
+
+.main-ourService__tblock {
+    transform: translateY(80px);
+}
+
+.main-ourService__foblock {
+    transform: translateY(20px);
+}
+
+.main-ourService__fiblock {
+    transform: translateY(60px);
+    position: relative;
+}
+
+.main-ourService__sixblock {
+    transform: translateY(100px);
+}
+
+.main-ourService__fiblock button{
+    border: 2px solid;
+    border-image: linear-gradient(to right, rgba(12, 186, 241, 1), rgba(233, 92, 233, 1)) 1;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 18px 45px;
+    font-family: 'Chakra Petch', sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    position: absolute;
+    bottom: 15px;
+}
