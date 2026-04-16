@@ -1,0 +1,142 @@
+/* * {border: 1px solid red;} */
+
+
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('../fonts/chakra_petch/ChakraPetch-Light.ttf') format('truetype');
+}
+
+body{
+    background-color: rgba(24, 24, 27, 1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;      
+    overflow-x: hidden;
+}
+
+.header{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 10vh;
+}
+
+.header__logo{
+    display: flex;
+    align-items: center;
+}
+
+.header__nav span,
+.header__contact span{
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.header__nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
+
+.header__contact{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    padding: 20px;
+    border: 2px solid;
+    border-image: linear-gradient(to right, rgba(12, 186, 241, 1), rgba(233, 92, 233, 1)) 1;
+    flex-direction: row;
+}
+
+.header__corner-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.header__corner-img img{
+    transform: rotate(180deg);
+    width: 100%;
+    height: auto; 
+}
+
+.main-top{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-left: 200px;
+    margin-top: 100px;
+}
+
+.main-top__img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-top__img-man {
+  position: relative;
+  z-index: 2;
+}
+
+.main-top__img-light {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.main-top__text { grid-area: 1 / 1 / 2 / 2;}
+.main-top__img { grid-area: 1 / 2 / 2 / 3;}
+
+.main-top__img{
+    height: auto;
+}
+
+.main-top__text{
+    font-family: 'Chakra Petch', sans-serif;
+    color:white;
+}
+
+.main-top__text h1{
+    font-size: 80px ;
+    margin-bottom: 10px;
+}
+
+.main-top__text span{
+    color: rgba(209, 209, 209, 1);
+}
+
+.main-top__text button{
+    padding: 18px 45px;
+    font-family: 'Chakra Petch', sans-serif;
+    background: linear-gradient(to right, rgba(12, 186, 241, 1), rgba(233, 92, 233, 1));
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+.main-top__clients{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    place-items: center;
+    justify-items: start;
+}
+
+.main-top__assets {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0; 
+}
