@@ -118,7 +118,8 @@ body{
 }
 
 .main-top__text button,
-.main-aboutUs__text button{
+.main-aboutUs__text button,
+.main-HowToGetStarted button{
     padding: 18px 45px;
     font-family: 'Chakra Petch', sans-serif;
     background: linear-gradient(to right, rgba(12, 186, 241, 1), rgba(233, 92, 233, 1));
@@ -270,7 +271,8 @@ body{
 .main-ourService__sixblock{grid-area: 3 / 3 / 4 / 4;}
 
 .main-ourService__header h4,
-.main-whyChooseUs__text h4{
+.main-whyChooseUs__text h4,
+.main-HowToGetStarted h4{
     font-family: 'Chakra Petch', sans-serif;
     background: linear-gradient(to right, rgba(12, 186, 241, 1) 0%, rgba(233, 92, 233, 1) 10%);
     -webkit-background-clip: text;
@@ -279,7 +281,8 @@ body{
 }
 
 .main-ourService__header h2,
-.main-whyChooseUs__text h2{
+.main-whyChooseUs__text h2,
+.main-HowToGetStarted h2{
     font-family: 'Chakra Petch', sans-serif;
     color: white;
     font-size: 3rem;
@@ -408,4 +411,30 @@ body{
     content: '⌵';
     font-size: 10px;
     color: rgba(255, 255, 255);
+}
+
+.main-HowToGetStarted{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main-HowToGetStarted h2:nth-child(2){
+    margin-bottom: 0;
+}
+
+.main-HowToGetStarted__img{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-HowToGetStarted__img img{
+    z-index: 0;
+    width: 70%;
+    height: auto;
+    margin-bottom: 4vh;
 }
