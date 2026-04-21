@@ -294,7 +294,8 @@ body{
 .main-testimonial__text h2,
 .main-OurPricing__text h2,
 .main-OurTrustedPartners h2,
-.main-OurArticles h2{
+.main-OurArticles h2,
+.main-subscribe__text h2{
     font-family: 'Chakra Petch', sans-serif;
     color: white;
     font-size: 3rem;
@@ -635,4 +636,24 @@ body{
 
 .main-OurArticles__BgImg > img:nth-of-type(2){
     bottom: 250px;
+}
+
+.main-subscribe{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 73%;
+    margin: 0 auto 150px 300px;
+}
+
+.main-subscribe__text{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to right, rgba(12, 186, 241, 1), rgba(233, 92, 233, 1));
+    height: 20vh;
+}
+
+.main-subscribe__text h2{
+    margin: 0;
 }
