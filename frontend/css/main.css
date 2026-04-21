@@ -76,7 +76,8 @@ body{
     margin-top: 100px;
 }
 
-.main-top__img {
+.main-top__img,
+.main-OurArticles__BgImg {
   position: relative;
   display: flex;
   justify-content: center;
@@ -137,7 +138,9 @@ body{
     justify-items: start;
 }
 
-.main-top__assets {
+.main-top__assets,
+.main-OurArticles__BgImg > img:nth-of-type(1),
+.main-OurArticles__BgImg > img:nth-of-type(2){
     position: absolute;
     bottom: 0;
     left: 0;
@@ -276,7 +279,8 @@ body{
 .main-HowToGetStarted h4,
 .main-testimonial__text h4,
 .main-OurPricing__text h4,
-.main-OurTrustedPartners h4{
+.main-OurTrustedPartners h4,
+.main-OurArticles h4{
     font-family: 'Chakra Petch', sans-serif;
     background: linear-gradient(to right, rgba(12, 186, 241, 1) 0%, rgba(233, 92, 233, 1) 10%);
     -webkit-background-clip: text;
@@ -289,7 +293,8 @@ body{
 .main-HowToGetStarted h2,
 .main-testimonial__text h2,
 .main-OurPricing__text h2,
-.main-OurTrustedPartners h2{
+.main-OurTrustedPartners h2,
+.main-OurArticles h2{
     font-family: 'Chakra Petch', sans-serif;
     color: white;
     font-size: 3rem;
@@ -320,7 +325,8 @@ body{
 .main-ourService__sixblock h3,
 .main-OurPricing__grid-customizable h3,
 .main-OurPricing__grid-flexible h3,
-.main-OurPricing__grid-satisfaction h3{
+.main-OurPricing__grid-satisfaction h3,
+.main-OurArticles__img-Popular h3{
     font-family: 'Chakra Petch', sans-serif;
     color: rgba(255, 255, 255, 1);
     font-weight: normal;
@@ -516,7 +522,8 @@ body{
     margin-bottom: 0;
 }
 
-.main-OurPricing{
+.main-OurPricing,
+.main-OurArticles{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -587,4 +594,45 @@ body{
     margin-top: 15px;
     font-size: 12px;
     color: #888;
+}
+
+.main-OurArticles__img-Popular p{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 28px;
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+}
+
+.main-OurArticles__button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-OurArticles button{
+    border: 2px solid;
+    border-image: linear-gradient(to right, rgba(12, 186, 241, 1), rgba(233, 92, 233, 1)) 1;
+    background: rgba(255, 255, 255, 0.06);
+    height: 6vh;
+    width: 10%;
+    font-family: 'Chakra Petch', sans-serif;
+    color: rgba(255, 255, 255, 1);
+    font-weight: bold;
+}
+
+.main-OurArticles__img{
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-OurArticles__BgImg > img:nth-of-type(1){
+    bottom: -150px;
+}
+
+.main-OurArticles__BgImg > img:nth-of-type(1),
+.main-OurArticles__BgImg > img:nth-of-type(2){
+    left: -320px;
+}
+
+.main-OurArticles__BgImg > img:nth-of-type(2){
+    bottom: 250px;
 }
