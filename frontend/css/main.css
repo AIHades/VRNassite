@@ -272,7 +272,8 @@ body{
 
 .main-ourService__header h4,
 .main-whyChooseUs__text h4,
-.main-HowToGetStarted h4{
+.main-HowToGetStarted h4,
+.main-testimonial__text h4{
     font-family: 'Chakra Petch', sans-serif;
     background: linear-gradient(to right, rgba(12, 186, 241, 1) 0%, rgba(233, 92, 233, 1) 10%);
     -webkit-background-clip: text;
@@ -282,7 +283,8 @@ body{
 
 .main-ourService__header h2,
 .main-whyChooseUs__text h2,
-.main-HowToGetStarted h2{
+.main-HowToGetStarted h2,
+.main-testimonial__text h2{
     font-family: 'Chakra Petch', sans-serif;
     color: white;
     font-size: 3rem;
@@ -413,10 +415,11 @@ body{
     color: rgba(255, 255, 255);
 }
 
-.main-HowToGetStarted{
+.main-HowToGetStarted,
+.main-testimonial{
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    margin: 0 auto 150px auto;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -437,4 +440,59 @@ body{
     width: 70%;
     height: auto;
     margin-bottom: 4vh;
+}
+
+.main-testimonial__img{
+    position: relative;
+    top: -250px;
+    right: 0;
+}
+
+.main-testimonial__text h4, h2{
+    text-align: center;
+}
+
+.main-testimonial__img-man{
+    position: relative;
+    z-index: 1;
+}
+
+.main-testimonial__img-1avatar,
+.main-testimonial__img-2avatar,
+.main-testimonial__img-3avatar,
+.main-testimonial__img-4avatar,
+.main-testimonial__img-5avatar,
+.main-testimonial__img-6avatar{
+    position: absolute;
+    z-index: 2;
+}
+
+.main-testimonial__img-1avatar{
+    left: 50px;
+    top: 250px;
+}
+
+.main-testimonial__img-2avatar{
+    right: 450px;
+    top: 250px;
+}
+
+.main-testimonial__img-3avatar{
+    left: 200px;
+    bottom: 200px;
+}
+
+.main-testimonial__img-4avatar{
+    left: 560px;
+    bottom: 315px;
+}
+
+.main-testimonial__img-5avatar{
+    right: 135px;
+    top: 600px;
+}
+
+.main-testimonial__img-6avatar{
+    right: 200px;
+    bottom: 100px;
 }
