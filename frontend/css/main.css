@@ -275,7 +275,8 @@ body{
 .main-whyChooseUs__text h4,
 .main-HowToGetStarted h4,
 .main-testimonial__text h4,
-.main-OurPricing__text h4{
+.main-OurPricing__text h4,
+.main-OurTrustedPartners h4{
     font-family: 'Chakra Petch', sans-serif;
     background: linear-gradient(to right, rgba(12, 186, 241, 1) 0%, rgba(233, 92, 233, 1) 10%);
     -webkit-background-clip: text;
@@ -287,7 +288,8 @@ body{
 .main-whyChooseUs__text h2,
 .main-HowToGetStarted h2,
 .main-testimonial__text h2,
-.main-OurPricing__text h2{
+.main-OurPricing__text h2,
+.main-OurTrustedPartners h2{
     font-family: 'Chakra Petch', sans-serif;
     color: white;
     font-size: 3rem;
@@ -427,7 +429,8 @@ body{
 }
 
 .main-HowToGetStarted,
-.main-testimonial{
+.main-testimonial,
+.main-OurTrustedPartners{
     display: flex;
     flex-direction: column;
     margin: 0 auto 150px auto;
