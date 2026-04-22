@@ -10,8 +10,7 @@ body{
     background-color: rgba(24, 24, 27, 1);
     display: flex;
     justify-content: center;
-    flex-direction: column;      
-    overflow-x: hidden;
+    flex-direction: column;
 }
 
 .header{
@@ -92,7 +91,7 @@ body{
 .main-top__img-light {
   position: absolute;
   top: 50%;
-  left: 55%;
+  left: 49%;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -721,4 +720,116 @@ body{
     position: absolute;
     top: 150px;
     left: 0;
+}
+
+@media (max-width: 768px) {
+    .main-top,
+    .main-chooseUs,
+    .main-ourService,
+    .main-OurPricing,
+    .main-OurArticles,
+    .main-subscribe,
+    .footer__grid {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .header {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .header__nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .main-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .main-top__text h1 {
+        font-size: 36px;
+    }
+
+    .main-top__img {
+        margin-top: 20px;
+    }
+
+    .main-top__img-light {
+        display: none;
+    }
+
+    .main-chooseUs {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .main-aboutUs,
+    .main-whyChooseUs {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .main-aboutUs__img-video,
+    .main-whyChooseUs__img-Video {
+        display: none;
+    }
+
+    .main-ourService {
+    grid-template-columns: 1fr;
+    margin: 50px auto;
+}
+
+    .main-ourService__fblock,
+    .main-ourService__sblock,
+    .main-ourService__tblock,
+    .main-ourService__foblock,
+    .main-ourService__fiblock,
+    .main-ourService__sixblock {
+        transform: none;
+        width: 100%;
+    }
+
+    .main-OurPricing__card {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .main-OurArticles__img {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .main-subscribe__text {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .main-ourService {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main-ourService {
+        grid-template-columns: 1fr;
+    }
 }
