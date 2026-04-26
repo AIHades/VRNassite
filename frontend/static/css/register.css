@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'Chakra Petch';
+    src: url('../fonts/chakra_petch/ChakraPetch-Light.ttf') format('truetype');
+}
+
+body{
+    background-color: rgba(24, 24, 27, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(37, 37, 50, 1);
+    width: 30%;
+    height: 50vh;
+    border-radius: 15px;
+}
+
+.register-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+}
+
+.register-form input{
+    height: 3vh;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.register h1{
+    font-family: 'Chakra Petch', sans-serif;
+    background: linear-gradient(to right, rgba(12, 186, 241, 1) 0%, rgba(233, 92, 233, 1) 10%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
