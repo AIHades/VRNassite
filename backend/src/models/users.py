@@ -10,4 +10,5 @@ class UsersModel(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     login: Mapped[str] = mapped_column(String(255))
     password: Mapped[str] = mapped_column(String(255))
+    email: Mapped[str] = mapped_column(String(255))
     is_admin: Mapped[bool]

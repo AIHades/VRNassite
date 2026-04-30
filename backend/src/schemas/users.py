@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field, EmailStr
 
 class UserRequestAdd(BaseModel):
     login: str
-    email: EmailStr
+    email: EmailStr | None = None
     password: str
 
 
@@ -15,3 +15,7 @@ class UserAdd(BaseModel):
 
 class User(UserAdd):
     id: int
+
+
+class UserHashedPassword(User):
+    hashed_password: str
