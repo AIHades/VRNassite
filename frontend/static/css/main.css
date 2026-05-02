@@ -627,8 +627,6 @@ button {
     margin-bottom: 32px;
 }
 
-/* accordion items */
-
 .main-whyChooseUs__text span {
     font-family: 'Chakra Petch', sans-serif;
     color: rgba(255, 255, 255, 1);
@@ -641,12 +639,6 @@ button {
     font-size: 1.2rem;
     cursor: pointer;
     font-weight: 600;
-}
-
-.main-whyChooseUs__text span::after {
-    content: '⌵';
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255);
 }
 
 .main-whyChooseUs__img {
@@ -677,6 +669,64 @@ button {
     right: 15%;
     z-index: 4;
     width: 196px;
+}
+
+.main-whyChooseUs__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.main-whyChooseUs__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 0;
+    cursor: pointer;
+}
+
+.main-whyChooseUs__question span{
+    font-size: 16px;
+}
+
+.main-whyChooseUs__item.active .main-whyChooseUs__question span{
+    color: white;
+}
+ 
+.main-whyChooseUs__arrow {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+ 
+.main-whyChooseUs__arrow::after {
+    content: '⌵';
+    transition: transform 0.3s
+}
+ 
+.main-whyChooseUs__item.active .main-whyChooseUs__arrow::after {
+    transform: rotate(-180deg)
+}
+ 
+.main-whyChooseUs__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+ 
+.main-whyChooseUs__answer p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #818181;
+}
+ 
+.main-whyChooseUs__item.active .main-whyChooseUs__answer {
+    max-height: 300px;
 }
 
 .main-HowToGetStarted {
@@ -875,21 +925,6 @@ button {
     width: 100%;
 }
 
-/* TODO движение вместе с блоком */
-.main-OurPricing__card {
-    border: 1px solid #9b5cf6;
-    padding: 1rem 2rem;
-    text-align: center;
-    background: rgba(37, 37, 50);
-    width: 80%;
-    max-width: 280px;
-    margin: 3rem auto 0 auto;
-    bottom: 10%;
-    left: 20%;
-    position: relative;
-    z-index: 3;
-}
-
 .main-OurPricing__text h2 {
     font-family: 'Chakra Petch', sans-serif;
     color: white;
@@ -960,19 +995,6 @@ button {
 .main-OurArticles {
     padding: 0 0 120px;
     position: relative;
-}
-
-/* bg glow bottom */
-.main-OurArticles::before {
-    content: '';
-    position: absolute;
-    bottom: -40%;
-    left: 0;
-    width: 1100px;
-    height: 721px;
-    background: url('../img/hero/bg.svg') top right no-repeat;
-    z-index: -2;
-    pointer-events: none;
 }
 
 .main-OurArticles__inner {
@@ -1216,6 +1238,10 @@ button {
     .main-aboutUs__text>span:first-of-type {
         font-size: 36px;
     }
+    .main-OurArticles{
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 991px) {
@@ -1252,8 +1278,6 @@ button {
     .main-chooseUs__customization,
     .main-chooseUs__service {
         padding: 0 0 32px;
-        border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .main-chooseUs__service {
@@ -1313,10 +1337,6 @@ button {
     .main-OurPricing__body {
         flex-direction: column;
         gap: 40px;
-    }
-
-    .main-OurPricing__img-col {
-        display: none;
     }
 
     .main-OurTrustedPartners h2 {
