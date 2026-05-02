@@ -1,268 +1,357 @@
-@font-face {
-    font-family: 'Chakra Petch';
-    src: url('../fonts/chakra_petch/ChakraPetch-Light.ttf') format('truetype');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
+* {
+    /* border: 1px solid red; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background-color: rgba(24, 24, 27, 1);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+html,
+body {
+    height: 100%;
+    min-width: 320px;
 }
 
-.header{
-    display: flex;
-    justify-content: space-around;
+body {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: #18181b;
+    line-height: 1;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: 'Chakra Petch', sans-serif;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 10vh;
+    z-index: 100;
+    padding: 30px 0;
+    transition: padding 0.3s;
 }
 
-.header__logo{
+.header.scrolled {
+    padding: 15px 0;
+    background-color: rgba(37, 37, 50, 0.7);
+}
+
+.header>* {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.header__logo svg {
+    display: block;
+    width: 100px;
+    height: 30px;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex: 1;
+    justify-content: center;
 }
 
 .header__nav span,
 .header__contact span{
-    color: rgba(255, 255, 255, 1);
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 300;
-    display: flex;
-    align-items: center;
+    color: #818181;
+    cursor: pointer;
+    transition: color 0.5s;
 }
 
-.header__nav{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px;
+.header__nav span:hover {
+    color: white;
 }
 
-.header__contact{
-    display: flex;
-    align-items: center;
-    align-self: center;
-    padding: 20px;
+.header__contact {
+    padding: 0.8rem 1.5rem;
     border: 2px solid;
     border-image: linear-gradient(to right, rgba(12, 186, 241, 1), rgba(233, 92, 233, 1)) 1;
-    flex-direction: row;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
-.header__corner-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
+.header__contact:hover{
+    background: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%);
 }
 
-.header__corner-img img{
-    transform: rotate(180deg);
-    width: 100%;
-    height: auto; 
+.header__contact:hover span{
+    color: white;
 }
 
-.aboutUs-heading h2,
-.aboutUs-whyChooseUs-secondBlock__text h2{
-    color: rgba(255, 255, 255, 1);
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 4rem;
-}
-
-.aboutUs-heading h4{
-    color: rgba(255, 255, 255, 1);
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 1rem;
-    margin-bottom: 100px;
-}
-
-.aboutUs-heading h4::after{
-    content: "About us";
-    color: grey;
-}
-
-.aboutUs-heading{
+/* ===========================
+   ABOUT US HEADING (breadcrumb / banner)
+=========================== */
+.aboutUs-heading {
+    position: relative;
+    padding: 160px 60px 60px;
+    text-align: center;
+    overflow: hidden;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    justify-content: center;
 }
 
-.aboutUs-heading img:nth-of-type(1){
+.aboutUs-aboutUs::after {
+    content: '';
     position: absolute;
-    top: -50px;
+    top: 0;
+    right: 0;
+    width: 1011px;
+    height: 498px;
+    background: url("../img/footer/corner.png");
+    rotate: 180deg;
     z-index: -1;
 }
 
-.aboutUs-heading img:nth-of-type(2){
-    width: 68%;
-}
-
-.aboutUs-aboutUs{
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: space-around;
-    width: 80%;
-    margin: 100px auto 200px auto;
-}
-
-.main-aboutUs__img, .main-whyChooseUs__text{grid-area: 1 / 2 / 2 / 3;}
-.main-aboutUs__text, .main-whyChooseUs__img{grid-area: 1 / 1 / 2 / 2;}
-
-.about-aboutUs__img{
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.about-aboutUs__img-man{
-    position: relative;
-    z-index: 3; 
-}
-
-.aboutUs-aboutUs__img-BgMan{
+.aboutUs-heading::before {
+    content: '';
     position: absolute;
-    right: 300px;
-    bottom: -160px;
-    z-index: -2; 
+    z-index: -3;
+    top: 40%;
+    right: 40%;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(98.54deg, rgba(28, 196, 249, 0.8) 0.72%, rgba(254, 105, 254, 0.8) 90.69%);
+    filter: blur(105px);
+    border-radius: 88% 12% 88% 12% / 20% 37% 63% 80%;
 }
 
-.aboutUs-aboutUs__img-LightBgMan{
+.aboutUs-heading::after {
+    content: '';
     position: absolute;
-    bottom: -160px;
-    right: 0px;
-    z-index: -1;  
+    bottom: 0;
+    left: 15%;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(98.54deg, rgba(28, 196, 249, 0.8) 0.72%, rgba(254, 105, 254, 0.8) 90.69%);;
+    z-index: -10;
 }
 
-.aboutUs-aboutUs__img-video {
-    position: absolute;
-    bottom: -200px;
-    right: 600px;
-    z-index: 4; 
+.aboutUs-heading h2 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
-.aboutUs-aboutUs__text{
-    font-family: 'Chakra Petch', sans-serif;
-    color: #b0b0b2;
+.aboutUs-heading h4 {
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+.aboutUs-heading h4::after {
+    content: 'About us';
+    color: #d1d1d1;
+}
+
+/* ===========================
+   ABOUT US — aboutUs-aboutUs
+=========================== */
+.aboutUs-aboutUs {
+    display: flex;
+    align-items: flex-start;
+    gap: 65px;
+    padding: 80px 60px 120px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.aboutUs-aboutUs__text {
+    flex: 0 1 50%;
 }
 
 .aboutUs-aboutUs__text h4,
 .aboutUs-whyChooseUs__text h4,
 .aboutUs-whyChooseUs-secondBlock__text h4,
-.aboutUs-ourTeam > h4,
-.aboutUs-ourTrustedPartners h4{
+.aboutUs-ourTeam h4,
+.aboutUs-ourTrustedPartners h4,
+.aboutUs-FAQ__text h4 {
+    font-family: 'Chakra Petch', sans-serif;
     background: linear-gradient(to right, rgba(12, 186, 241, 1) 0%, rgba(233, 92, 233, 1) 10%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
 }
 
 .aboutUs-aboutUs__text h2,
 .aboutUs-whyChooseUs__text h2,
 .aboutUs-whyChooseUs-secondBlock__text h2,
-.aboutUs-ourTeam__button > h2,
-.aboutUs-ourTrustedPartners h2{
-    font-family: 'Chakra Petch', sans-serif;
+.aboutUs-ourTeam__button h2,
+.aboutUs-ourTrustedPartners h2,
+.aboutUs-FAQ__text h2 {
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.21;
     color: white;
-    font-size: 3rem;
-    margin-top: 0px;
+    margin-bottom: 24px;
 }
 
-.aboutUs-whyChooseUs__text h2:nth-of-type(1){
-    margin-bottom: 0px;
-}
-
-.aboutUs-aboutUs__text > span{
+.aboutUs-aboutUs__text span {
+    font-size: 16px;
+    font-weight: 300;
+    color: #818181;
+    cursor: pointer;
+    transition: color 0.5s;
     line-height: 2;
 }
 
-.aboutUs-whyChooseUs{
+.aboutUs-aboutUs__img {
+    flex: 0 1 50%;
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 200px;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-.aboutUs-whyChooseUs__text{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.aboutUs-aboutUs__img::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    right: 5%;
+    width: 450px;
+    height: 200px;
+    background: linear-gradient(98.54deg, rgba(28, 196, 249, 0.8) 0.72%, rgba(254, 105, 254, 0.8) 90.69%);
+    filter: blur(105px);
+    border-radius: 88% 12% 88% 12% / 20% 37% 63% 80%;
 }
 
-.aboutUs-whyChooseUs__info{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-around;
+.aboutUs-aboutUs__img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 73%;
+    height: 76%;
+    background-color: #252532;
+    z-index: 0;
+}
+
+.aboutUs-aboutUs__img-man {
+    position: relative;
+    z-index: 3;
+    width: 70%;
+    padding-left: 23px;
+}
+
+.aboutUs-aboutUs__img-video {
+    position: absolute;
+    bottom: -5%;
+    left: 10%;
+    z-index: 4;
+    width: 30%;
+}
+
+/* ===========================
+   WHY CHOOSE US
+=========================== */
+.aboutUs-whyChooseUs {
+    padding: 0 0 120px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 69%;
-    height: auto;
+}
+
+.aboutUs-whyChooseUs__text {
+    max-width: 1320px;
+    margin: 0 auto;
+    margin-bottom: 55px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutUs-whyChooseUs__info {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 55px 65px;
     background-color: rgba(37, 37, 50);
-    padding: 5vh 0;
     border: 1px solid #4e4e59;
+    display: flex;
+    gap: 100px;
 }
 
-.aboutUs-whyChooseUs__expertise{grid-area: 1 / 1 / 2 / 2;}
-.aboutUs-whyChooseUs__customization{grid-area: 1 / 2 / 2 / 3;}
-.aboutUs-whyChooseUs__service{grid-area: 1 / 3 / 2 / 4;}
+.aboutUs-whyChooseUs__expertise img,
+.aboutUs-whyChooseUs__service img {
+    margin-bottom: 42px;
+}
 
-.aboutUs-whyChooseUs h3{
+.aboutUs-whyChooseUs__customization img {
+    margin-bottom: 50px;
+}
+
+.aboutUs-whyChooseUs__expertise h3,
+.aboutUs-whyChooseUs__customization h3,
+.aboutUs-whyChooseUs__service h3 {
     font-family: 'Chakra Petch', sans-serif;
-    color:rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 1);
     font-weight: normal;
     font-size: 1.6rem;
+    margin: 0.5rem 0;
+    font-weight: 600;
 }
 
-.aboutUs-whyChooseUs span{
-    font-family: 'Chakra Petch', sans-serif;
-    color: #b0b0b2;
+.aboutUs-whyChooseUs__expertise span,
+.aboutUs-whyChooseUs__customization span,
+.aboutUs-whyChooseUs__service span,
+.aboutUs-FAQ__text span,
+.aboutUs-FAQ__question span{
+    font-size: 14px;
     line-height: 2;
+    color: #818181;
 }
 
-.aboutUs-whyChooseUs-secondBlock{
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: start;
-    width: 69%;
-    margin: 100px auto;
+.aboutUs-whyChooseUs-secondBlock {
+    max-width: 1320px;
+    margin: 80px auto 0;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
 }
 
-.aboutUs-whyChooseUs-secondBlock__text{grid-area: 1 / 2 / 2 / 3;}
-.aboutUs-whyChooseUs-secondBlock__img{grid-area: 1 / 1 / 2 / 2;}
-
-.aboutUs-whyChooseUs-secondBlock__img{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.aboutUs-whyChooseUs-secondBlock__img-man{
-    position: relative;
-    width: 70%;
-    height: auto;
-    z-index: 1;
-}
-
-.aboutUs-whyChooseUs-secondBlock__img-Bgman{
-    position: absolute;
-    z-index: -1; 
-    bottom: 10px;
-}
-
-.aboutUs-whyChooseUs-secondBlock__img-BgLightMan{
-    position: absolute;
-    left: -41%;
-    z-index: -2;  
-}
-
-.aboutUs-whyChooseUs-secondBlock__img-Video {
-    position: absolute;
-    bottom: -10%;
-    right: 30%;
-    z-index: 2; 
+.aboutUs-whyChooseUs-secondBlock__text {
+    flex: 0 1 50%;
 }
 
 .aboutUs-whyChooseUs-secondBlock__text span {
@@ -272,58 +361,512 @@ body{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 30px 0;
+    padding: 3rem 0;
     border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
-    font-size: 24px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
 }
 
 .aboutUs-whyChooseUs-secondBlock__text span::after {
     content: '⌵';
-    font-size: 10px;
+    font-size: 0.8rem;
     color: rgba(255, 255, 255);
 }
 
-.aboutUs-ourTeam{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 69%;
-    margin: 0 auto 150px 300px;
+.aboutUs-whyChooseUs-secondBlock__img {
+    flex: 0 1 50%;
     position: relative;
 }
 
-.aboutUs-ourTeam__button{
-    display: flex;
-    justify-content: space-between;
+.aboutUs-whyChooseUs-secondBlock__img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 8%;
+    width: 73%;
+    height: 76%;
+    background-color: #252532;
+    z-index: 0;
 }
 
-.aboutUs-ourTeam button{
+.aboutUs-whyChooseUs-secondBlock__img-man {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    object-fit: contain;
+    object-position: bottom;
+}
+
+.aboutUs-whyChooseUs-secondBlock__img-Video {
+    position: absolute;
+    bottom: -5%;
+    right: 15%;
+    z-index: 4;
+    width: 196px;
+}
+
+.aboutUs-whyChooseUs-secondBlock__img::before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    right: 5%;
+    width: 450px;
+    height: 200px;
+    background: linear-gradient(98.54deg, rgba(28, 196, 249, 0.8) 0.72%, rgba(254, 105, 254, 0.8) 90.69%);
+    filter: blur(105px);
+    border-radius: 88% 12% 88% 12% / 20% 37% 63% 80%;
+}
+
+/* ===========================
+   OUR TEAM
+=========================== */
+.aboutUs-ourTeam {
+    padding: 0 60px 120px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.aboutUs-ourTeam__button {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+
+.aboutUs-ourTeam__button span {
+    font-size: 16px;
+    font-weight: 300;
+    color: #818181;
+    cursor: pointer;
+    transition: color 0.5s;
+    padding: 0.8rem 1.5rem;
     border: 2px solid;
     border-image: linear-gradient(to right, rgba(12, 186, 241, 1), rgba(233, 92, 233, 1)) 1;
-    background: rgba(255, 255, 255, 0.06);
-    height: 6vh;
-    width: 10%;
-    font-family: 'Chakra Petch', sans-serif;
-    color: rgba(255, 255, 255, 1);
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
-.aboutUs-ourTeam__img{
+.aboutUs-ourTeam__button span:hover {
+    background: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%);
+}
+
+.aboutUs-ourTeam__button:hover span {
+    color: white;
+}
+
+.aboutUs-ourTeam__img {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: 2%;
+    gap: 24px;
 }
 
-.about-ourTeam__img img:nth-of-type(1){grid-area: 1 / 1 / 2 / 2;}
-.about-ourTeam__img img:nth-of-type(2){grid-area: 1 / 2 / 2 / 3;}
-.about-ourTeam__img img:nth-of-type(3){grid-area: 1 / 3 / 2 / 4;}
-.about-ourTeam__img img:nth-of-type(3){grid-area: 1 / 4 / 2 / 5;}
+.aboutUs-ourTeam__img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
 
-.aboutUs-ourTrustedPartners{
+.aboutUs-ourTeam__img img:hover {
+    transform: translateY(-6px);
+}
+
+/* ===========================
+   OUR TRUSTED PARTNERS
+=========================== */
+.aboutUs-ourTrustedPartners {
+    padding: 0 60px 120px;
+    max-width: 1440px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.aboutUs-ourTrustedPartners__img {
+    max-width: 1055px;
+    margin: 0 auto;
+}
+
+.aboutUs-ourTrustedPartners__img img {
+    width: 100%;
+    height: auto;
+}
+
+.aboutUs-FAQ{
+    padding: 0 60px 120px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.aboutUs-FAQ__text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px
+}
+
+.aboutUs-FAQ__text span{
+    text-align: center;
+}
+
+.aboutUs-FAQ__list {
     display: flex;
     flex-direction: column;
-    margin: 0 auto 150px auto;
-    justify-content: center;
+    gap: 8px;
+}
+ 
+.aboutUs-FAQ__item {
+    background-color: rgba(37, 37, 50);;
+}
+
+.aboutUs-FAQ__question {
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px 28px;
+    cursor: pointer;
+}
+
+.aboutUs-FAQ__question span{
+    font-size: 16px;
+}
+
+.aboutUs-FAQ__item.active .aboutUs-FAQ__question span{
+    color: white;
+}
+ 
+.aboutUs-FAQ__arrow {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+ 
+.aboutUs-FAQ__arrow::after {
+    content: '⌵';
+    transition: transform 0.3s
+}
+ 
+.aboutUs-FAQ__item.active .aboutUs-FAQ__arrow::after {
+    transform: rotate(-180deg)
+}
+ 
+.aboutUs-FAQ__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+}
+ 
+.aboutUs-FAQ__answer p {
+    padding: 0 28px 24px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #818181;
+}
+ 
+.aboutUs-FAQ__item.active .aboutUs-FAQ__answer {
+    max-height: 300px;
+}
+
+.aboutUs-subscribe {
+    padding: 0 0 120px;
+}
+
+.aboutUs-subscribe__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.aboutUs-subscribe__text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%);
+    ;
+    border-radius: 4px;
+    padding: 40px 70px 30px;
+}
+
+.aboutUs-subscribe__text h2 {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: -0.005em;
+    color: white;
+}
+
+.aboutUs-subscribe__text img {
+    flex: 0 1 365px;
+    width: 365px;
+    height: auto;
+}
+
+.footer {
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* TODO */
+.footer::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1011px;
+    height: 498px;
+    background: url('../img/footer/corner.png');
+    z-index: -1;
+}
+
+.footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.footer__flex {
+    display: flex;
+    gap: 40px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.footer__flex::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #0cbaf1 0%, #e95ce9 100%);
+    ;
+}
+
+.footer__flex-VRNasColumn {
+    flex: 0 1 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.footer__flex-VRNasColumn__img {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer__flex-VRNasColumn__img img {
+    width: 46px;
+    height: 46px;
+}
+
+.footer__flex-VRNasColumn__img img:hover {
+    opacity: 0.7;
+}
+
+.footer__flex-quicklinks,
+.footer__flex-support,
+.footer__flex-help {
+    flex: 1;
+}
+
+.footer__flex-quicklinks ul,
+.footer__flex-support ul,
+.footer__flex-help ul {
+    padding: 0;
+    margin: 0;
+}
+
+.footer__flex-quicklinks li:first-child,
+.footer__flex-support li:first-child,
+.footer__flex-help li:first-child {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.75;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.footer__flex-quicklinks li,
+.footer__flex-support li {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #818181;
+    ;
+    margin-bottom: 16px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.footer__flex-quicklinks li:hover,
+.footer__flex-support li:hover {
+    opacity: 0.7;
+}
+
+.footer__flex-help li {
+    margin-bottom: 16px;
+}
+
+.footer__flex-help li div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: #818181;
+}
+
+.footer__bottom {
+    text-align: center;
+}
+
+.footer__bottom p,
+.footer>p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: white;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1200px) {
+    .header { padding: 24px 40px; }
+
+    .aboutUs-heading { padding: 160px 40px 60px; }
+    .aboutUs-heading h2 { font-size: 48px; }
+
+    .aboutUs-aboutUs { padding: 60px 40px 80px; gap: 40px; }
+    .aboutUs-aboutUs__text h2 { font-size: 36px; }
+
+    .aboutUs-whyChooseUs__text { padding: 0 40px; }
+    .aboutUs-whyChooseUs__info { padding: 40px; }
+    .aboutUs-whyChooseUs-secondBlock { padding: 0 40px; gap: 60px; }
+    .aboutUs-whyChooseUs-secondBlock__text h2 { font-size: 36px; }
+
+    .aboutUs-ourTeam { padding: 0 40px 80px; }
+    .aboutUs-ourTeam__button h2 { font-size: 36px; }
+
+    .aboutUs-ourTrustedPartners { padding: 0 40px 80px; }
+    .aboutUs-ourTrustedPartners h2 { font-size: 36px; }
+}
+
+@media (max-width: 991px) {
+    .header__nav { display: none; }
+
+    .aboutUs-heading h2 { font-size: 36px; }
+
+    .aboutUs-aboutUs {
+        flex-direction: column;
+        padding: 60px 30px 80px;
+    }
+    .aboutUs-aboutUs__text { flex: none; width: 100%; }
+    .aboutUs-aboutUs__img { flex: none; width: 100%; }
+
+    .aboutUs-whyChooseUs__info {
+        flex-direction: column;
+        padding: 40px 30px;
+    }
+    .aboutUs-whyChooseUs__expertise,
+    .aboutUs-whyChooseUs__customization,
+    .aboutUs-whyChooseUs__service {
+        padding: 0 0 32px;
+    }
+    .aboutUs-whyChooseUs__service { border-bottom: none; padding-bottom: 0; }
+
+    .aboutUs-whyChooseUs-secondBlock {
+        flex-direction: column-reverse;
+        gap: 40px;
+        padding: 0 30px;
+    }
+    .aboutUs-whyChooseUs-secondBlock__text h2 { font-size: 32px; }
+    .aboutUs-whyChooseUs-secondBlock__img { width: 100%; }
+
+    .aboutUs-ourTeam { padding: 0 30px 80px; }
+    .aboutUs-ourTeam__img { grid-template-columns: repeat(2, 1fr); }
+    .aboutUs-ourTeam__button h2 { font-size: 32px; }
+
+    .aboutUs-ourTrustedPartners { padding: 0 30px 80px; }
+    .aboutUs-ourTrustedPartners h2 { font-size: 32px; }
+
+    .aboutUs-subscribe__text {
+        width: 100%;
+        height: 50vh;
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 30px 20px;
+    }
+
+    .aboutUs-subscribe__text h2 {
+        font-size: 28px;
+    }
+
+    .aboutUs-subscribe__text img {
+        width: 100%;
+        height: auto;
+        max-width: 365px;
+        margin: 0 auto;
+    }
+
+    .footer__flex {
+        flex-wrap: wrap;
+    }
+
+    .footer__flex-VRNasColumn {
+        flex: 0 0 100%;
+        flex-direction: row;
+        align-items: center;
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .header { padding: 20px 20px; }
+    .header__contact { display: none; }
+
+    .aboutUs-heading { padding: 140px 20px 50px; }
+    .aboutUs-heading h2 { font-size: 28px; }
+
+    .aboutUs-aboutUs { padding: 40px 20px 60px; }
+    .aboutUs-aboutUs__text h2 { font-size: 26px; }
+
+    .aboutUs-whyChooseUs__text { padding: 0 20px; }
+    .aboutUs-whyChooseUs-secondBlock { padding: 0 20px; }
+    .aboutUs-whyChooseUs-secondBlock__text h2 { font-size: 26px; }
+
+    .aboutUs-ourTeam { padding: 0 20px 60px; }
+    .aboutUs-ourTeam__img { grid-template-columns: repeat(1, 1fr); gap: 16px; }
+    .aboutUs-ourTeam__button h2 { font-size: 26px; }
+
+    .aboutUs-ourTrustedPartners { padding: 0 20px 60px; }
+    .aboutUs-ourTrustedPartners h2 { font-size: 26px; }
+
+    .footer__flex-VRNasColumn {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__flex-quicklinks,
+    .footer__flex-support,
+    .footer__flex-help {
+        flex: 0 0 calc(50% - 20px);
+    }
 }
